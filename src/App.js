@@ -1,6 +1,8 @@
 import React from "react";
+import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
 import ColorSearch from "./components/ColorSearch/ColorSearch";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
+import ColorProvider from "./contexts/color-context/colorProvider";
 
 export default function App() {
     return (
@@ -9,11 +11,17 @@ export default function App() {
 
             </header>
             <main>
-                <section title="controls">
-                    <RandomColorGenerator />
-                    <ColorSearch />
-                </section>
-{/*                 
+                <ColorProvider>
+                    <section title="controls">
+                        <RandomColorGenerator />
+                        <ColorSearch />
+                    </section>
+
+                    <section>
+                        {/* <ColorDisplay /> */}
+                    </section>
+                </ColorProvider>
+                {/*                 
                 <section>
                     <color></color>
                     <conversionTable></conversionTable>

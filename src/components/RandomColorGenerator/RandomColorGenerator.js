@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { getRandomColor } from "../../helpers/colorHelpers";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "../UI/Button";
+import { ColorContext } from "../../contexts/color-context/color-context";
 
 const ColorGeneratorArea = styled.div``;
 
 export default function RandomColorGenerator() {
-    const [randomColor, setRandomColor] = useState(() => getRandomColor());
+    const colorCTX = useContext(ColorContext);
 
-    const generateRandomColorHandler = () => setRandomColor(() => getRandomColor());
+    const generateRandomColorHandler = () => colorCTX.generateRandomColor();
 
     return (
         <ColorGeneratorArea>
