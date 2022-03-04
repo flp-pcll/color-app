@@ -18,7 +18,7 @@ export default function App() {
                     </section>
 
                     <section>
-                        {/* <ColorDisplay /> */}
+                        <ColorDisplay />
                     </section>
                 </ColorProvider>
                 {/*                 
