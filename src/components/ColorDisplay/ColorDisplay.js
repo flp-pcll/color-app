@@ -10,16 +10,19 @@ height: 250px;
 border: 1px solid black;
 `;
 
-
 export default function ColorDisplay() {
     const colorCTX = useContext(ColorContext);
 
+    if(colorCTX.colorSeed === null || colorCTX.isLoading) {
+        return <div>Loading...</div>
+    };
+
     return (
         <React.Fragment>
-            <ColorArea bg={colorCTX?.colorInfo?.seed?.hex?.value} textColor={colorCTX?.colorInfo?.seed?.contrast?.value}>
+            <ColorArea bg={colorCTX?.colorSeed?.hex?.value} textColor={colorCTX?.colorSeed?.contrast?.value}>
                 <article>
-                    <h3>{colorCTX?.colorInfo?.seed?.hex?.value}</h3>
-                    <p>{colorCTX?.colorInfo?.seed?.name?.value}</p>
+                    <h3>{colorCTX?.colorSeed?.hex?.value}</h3>
+                    <p>{colorCTX?.colorSeed?.name?.value}</p>
                 </article>
             </ColorArea>
         </React.Fragment>

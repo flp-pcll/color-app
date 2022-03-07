@@ -5,10 +5,14 @@ import { getRandomColor } from "../../helpers/colorHelpers";
 export default function ColorProvider({ children }) {
     const [colorCode, setColorCode] = useState(() => getRandomColor());
     const [colorSeed, setColorSeed] = useState(null);
-    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-    const generateRandomColor = () => setColorCode(() => getRandomColor());
-    const setColorCodeToSearch = hexCode => setColorCode(hexCode);
+    const setColorCodeToSearch = hexCode => hexCode;
+
+    const setColorHexCode = hexCode => {
+        setColorCode(hexCode);
+        setIsLoading(true);
+    };
 
     useEffect(() => {
         const getColorInfo = async () => {
@@ -16,10 +20,10 @@ export default function ColorProvider({ children }) {
                 const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${colorCode}&format=json&count=10`);
                 if (!response.ok) throw new Error(`${response.status} - ${response.statusText}`)
                 const data = await response.json();
-                setColorSeed(data);
+                setColorSeed(data.seed);
+                setIsLoading(false);
             } catch (error) {
                 console.log(error);
-                setError(error);
             };
         };
 
@@ -27,11 +31,11 @@ export default function ColorProvider({ children }) {
     }, [colorCode]);
 
     const colorContext = {
-        colorCode: colorCode,
-        colorInfo: colorSeed,
-        error,
-        generateRandomColor,
-        setColorCodeToSearch
+        colorCode,
+        colorSeed,
+        isLoading,
+        setColorCodeToSearch,
+        setColorHexCode
     };
 
     return (
@@ -40,3 +44,4 @@ export default function ColorProvider({ children }) {
         </ColorContext.Provider>
     );
 };
+

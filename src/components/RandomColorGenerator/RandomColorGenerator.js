@@ -2,13 +2,17 @@ import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "../UI/Button";
 import { ColorContext } from "../../contexts/color-context/color-context";
+import { getRandomColor } from "../../helpers/colorHelpers";
 
 const ColorGeneratorArea = styled.div``;
 
 export default function RandomColorGenerator() {
     const colorCTX = useContext(ColorContext);
 
-    const generateRandomColorHandler = () => colorCTX.generateRandomColor();
+    const generateRandomColorHandler = () => {
+        const hexCode = getRandomColor();
+        colorCTX.setColorHexCode(hexCode);
+    };
 
     return (
         <ColorGeneratorArea>
