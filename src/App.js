@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
+import ColorPalettes from "./components/ColorPalettes/ColorPalettes";
 import ColorSearch from "./components/ColorSearch/ColorSearch";
 import ConversionTable from "./components/ConversionTable/ConversionTable";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
@@ -22,6 +23,8 @@ export default function App() {
                     <section>
                         <ConversionTable />
                     </section>
+                    <ColorPalettes>
+                    </ColorPalettes>
                 </ColorProvider>
             </main>
             <footer>
