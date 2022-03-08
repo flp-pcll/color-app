@@ -23,11 +23,12 @@ const ColorConversionTableRow = styled.tr``;
 
 export default function ConversionTable() {
     const colorCTX = useContext(ColorContext);
-    console.log(colorCTX);
 
     if(colorCTX.colorSeed === null || colorCTX.isLoading) {
         return <div>LOADING...</div>
     }
+
+    console.log('aloca')
 
     return (
     <React.Fragment>

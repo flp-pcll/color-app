@@ -7,8 +7,6 @@ export default function ColorProvider({ children }) {
     const [colorSeed, setColorSeed] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    const setColorCodeToSearch = hexCode => hexCode;
-
     const setColorHexCode = hexCode => {
         setColorCode(hexCode);
         setIsLoading(true);
@@ -34,9 +32,10 @@ export default function ColorProvider({ children }) {
         colorCode,
         colorSeed,
         isLoading,
-        setColorCodeToSearch,
         setColorHexCode
     };
+
+    console.log('teste', colorContext);
 
     return (
         <ColorContext.Provider value={colorContext}>
