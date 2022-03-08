@@ -35,8 +35,6 @@ export default function ColorProvider({ children }) {
         setColorHexCode
     };
 
-    console.log('teste', colorContext);
-
     return (
         <ColorContext.Provider value={colorContext}>
             {children}

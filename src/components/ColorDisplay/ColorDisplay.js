@@ -13,7 +13,7 @@ border: 1px solid black;
 export default function ColorDisplay() {
     const colorCTX = useContext(ColorContext);
 
-    if(colorCTX.colorSeed === null || colorCTX.isLoading) {
+    if(!colorCTX.colorSeed || colorCTX.isLoading) {
         return <div>Loading...</div>
     };
 
@@ -21,7 +21,7 @@ export default function ColorDisplay() {
         <React.Fragment>
             <ColorArea bg={colorCTX?.colorSeed?.hex?.value} textColor={colorCTX?.colorSeed?.contrast?.value}>
                 <article>
-                    <h3>{colorCTX?.colorSeed?.hex?.value}</h3>
+                    <h3>{colorCTX?.colorSeed?.hex?.value.split('#')}</h3>
                     <p>{colorCTX?.colorSeed?.name?.value}</p>
                 </article>
             </ColorArea>

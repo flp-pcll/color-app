@@ -28,8 +28,6 @@ export default function ConversionTable() {
         return <div>LOADING...</div>
     }
 
-    console.log('aloca')
-
     return (
     <React.Fragment>
         <h2>Conversion</h2>
