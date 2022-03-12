@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
+import ColorMainInfo from "./components/ColorDisplay/ColorMainInfo";
 import ColorPalettes from "./components/ColorPalettes/ColorPalettes";
 import ColorSearch from "./components/ColorSearch/ColorSearch";
 import ConversionTable from "./components/ConversionTable/ConversionTable";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
+import RandomColorPalette from "./components/RandomColorPalette/RandomColorPalette";
 import ColorProvider from "./contexts/color-context/colorProvider";
+
+import { GlobalStyle } from "./styles/GlobalStyle";
 
 export default function App() {
     return (
-        <div>
+        <React.Fragment>
+            <GlobalStyle />
             <header>
             </header>
             <main>
@@ -17,18 +22,19 @@ export default function App() {
                         <RandomColorGenerator />
                         <ColorSearch />
                     </section>
-                    <section>
-                        <ColorDisplay />
-                    </section>
-                    <section>
-                        <ConversionTable />
-                    </section>
-                    <ColorPalettes>
-                    </ColorPalettes>
+
+                    <ColorDisplay>
+                        <header>
+                            {/* <ColorMainInfo /> */}
+                        </header>
+                        {/* <ConversionTable />*/}
+                    </ColorDisplay>
+
+                    <ColorPalettes />
                 </ColorProvider>
             </main>
             <footer>
             </footer>
-        </div>
+        </React.Fragment>
     );
 };

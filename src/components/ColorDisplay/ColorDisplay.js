@@ -1,30 +1,22 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
+import { useHttp } from "../../hooks/useHttp";
 import { ColorContext } from "../../contexts/color-context/color-context";
+import styled from "styled-components";
 
-const ColorArea = styled.div`
-background-color: ${props => props.bg};
-color: ${props => props.textColor};
-width: 400px;
-height: 250px;
-border: 1px solid black;
-`;
+// https://www.thecolorapi.com/id?hex=000000&format=json
 
-export default function ColorDisplay() {
+const ColorDisplayArea = styled.section``;
+
+export default function ColorDisplay({ children }) {
     const colorCTX = useContext(ColorContext);
+    const { data: colorInfo, isLoading, error } = useHttp({ url: `https://www.thecolorapi.com/id?hex=${colorCTX.targetColor}&format=json` });
 
-    if(!colorCTX.colorSeed || colorCTX.isLoading) {
-        return <div>Loading...</div>
-    };
-
+    console.log(colorCTX.targetColor);
+    // console.log(colorInfo);
     return (
-        <React.Fragment>
-            <ColorArea bg={colorCTX?.colorSeed?.hex?.value} textColor={colorCTX?.colorSeed?.contrast?.value}>
-                <article>
-                    <h3>{colorCTX?.colorSeed?.hex?.value.split('#')}</h3>
-                    <p>{colorCTX?.colorSeed?.name?.value}</p>
-                </article>
-            </ColorArea>
-        </React.Fragment>
-    );
+        <ColorDisplayArea>
+            <div>Color Display Area</div>
+            {children}
+        </ColorDisplayArea>
+    )
 };
