@@ -1,11 +1,9 @@
 import React from "react";
 import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
-import ColorMainInfo from "./components/ColorDisplay/ColorMainInfo";
 import ColorPalettes from "./components/ColorPalettes/ColorPalettes";
 import ColorSearch from "./components/ColorSearch/ColorSearch";
-import ConversionTable from "./components/ConversionTable/ConversionTable";
+import ControlsFlex from "./components/Layout/ControlsFlex";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
-import RandomColorPalette from "./components/RandomColorPalette/RandomColorPalette";
 import ColorProvider from "./contexts/color-context/colorProvider";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
@@ -19,13 +17,15 @@ export default function App() {
             <main>
                 <ColorProvider>
                     <section title="controls">
-                        <RandomColorGenerator />
-                        <ColorSearch />
+                        <ControlsFlex>
+                            <RandomColorGenerator />
+                            <ColorSearch />
+                        </ControlsFlex>
                     </section>
 
-
-                    <ColorDisplay></ColorDisplay>
-
+                    <ColorDisplay>
+                    
+                    </ColorDisplay>
                     <ColorPalettes />
                 </ColorProvider>
             </main>
