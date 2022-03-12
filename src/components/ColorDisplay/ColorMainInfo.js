@@ -9,15 +9,16 @@ height: 250px;
 border: 1px solid black;
 `;
 
-export default function ColorDisplay({ colorInfo }) {
+function ColorMainInfo({ colorInfo }) {
+    console.log('color main info')
     return (
-        <React.Fragment>
             <ColorArea bg={colorInfo.hex.value} textColor={colorInfo.contrast.value}>
                 <article>
                     <h3>{colorInfo.name.value}</h3>
                     <p>{colorInfo.hex.clean}</p>
                 </article>
             </ColorArea>
-        </React.Fragment>
     );
 };
+
+export default React.memo(ColorMainInfo);

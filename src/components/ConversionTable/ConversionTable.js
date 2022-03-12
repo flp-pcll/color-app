@@ -1,27 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { ColorContext } from "../../contexts/color-context/color-context";
-
-//Neste componente, é necessário desestruturar a resposta para pegar apenas os objetos com informações relativas 
-//aos códigos de cores para a tabela de conversao, por exemplo: hsl, rgb, cmyk, etc...
-
-/*
-<table>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-    
-    </tbody>
-</table>
-*/
 
 const ColorConversionTable = styled.table``;
 
 const ColorConversionTableRow = styled.tr``;
 
-export default function ConversionTable({ colorInfo }) {
+function ConversionTable({ colorInfo }) {
+    console.log('conversion table');
 
     return (
         <React.Fragment>
@@ -57,3 +42,5 @@ export default function ConversionTable({ colorInfo }) {
         </React.Fragment>
     );
 };
+
+export default React.memo(ConversionTable);

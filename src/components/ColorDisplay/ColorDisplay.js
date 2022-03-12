@@ -15,7 +15,7 @@ export default function ColorDisplay({ children }) {
 
     console.log(loading, error);
 
-    if(loading) return <div>Loading...</div>
+    if (loading) return <div>Loading...</div>
 
     return (
         <React.Fragment>
