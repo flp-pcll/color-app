@@ -7,6 +7,8 @@ export const useHttp = (config) => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
+        
         const getData = async () => {
             const response = await fetch(config.url);
             const data = await response.json();

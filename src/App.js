@@ -23,12 +23,8 @@ export default function App() {
                         <ColorSearch />
                     </section>
 
-                    <ColorDisplay>
-                        <header>
-                            {/* <ColorMainInfo /> */}
-                        </header>
-                        {/* <ConversionTable />*/}
-                    </ColorDisplay>
+
+                    <ColorDisplay></ColorDisplay>
 
                     <ColorPalettes />
                 </ColorProvider>
