@@ -22,7 +22,7 @@ export default function ColorDisplay({ children }) {
                 <ColorDisplayArea>
                     <ColorMainInfo colorInfo={colorInfo} />
                     <ConversionTable colorInfo={colorInfo} />
-                    <ColorHarmonies targetColor={colorCTX.targetColor} />
+                    <ColorHarmonies />
                 </ColorDisplayArea>
             )}
         </React.Fragment>
