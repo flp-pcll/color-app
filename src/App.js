@@ -23,10 +23,7 @@ export default function App() {
                         </ControlsFlex>
                     </section>
 
-                    <ColorDisplay>
-                    
-                    </ColorDisplay>
-                    <ColorPalettes />
+                    <ColorDisplay></ColorDisplay>
                 </ColorProvider>
             </main>
             <footer>

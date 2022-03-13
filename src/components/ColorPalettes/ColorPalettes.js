@@ -10,7 +10,7 @@ export default function ColorPalettes() {
     const { data: colorSchemes, isLoading, error } = useHttp({ url: `https://www.thecolorapi.com/scheme?hex=${colorCTX.targetColor}&format=json&mode=analogic&count=10` });
 
     return (
-        <div>Color Palettes Area</div>
+        <div>aloca</div>
         //     <ColorPalettesArea>
         //         {isLoading && <div>Loading Color Palettes</div>}
         //         {

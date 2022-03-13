@@ -6,7 +6,12 @@ import styled from "styled-components";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 
-const ColorGeneratorArea = styled.div``;
+const ColorGeneratorArea = styled.div`
+    & h2 {
+        font-weight: 800;
+        font-size: 1.8rem;
+    }
+`;
 
 export default function RandomColorGenerator() {
     const colorCTX = useContext(ColorContext);

@@ -1,9 +1,19 @@
 import React, { useRef, useContext, useState } from "react";
 import { ColorContext } from "../../contexts/color-context/color-context";
 import { validateHexadecimalCode } from "../../helpers/validateHexadecimalCode";
+import styled from "styled-components";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import Card from "../UI/Card";
+
+const ColorSearchForm = styled.form`
+display: flex;
+`;
+
+const FormControls = styled.div`
+    display: flex;
+    /* flex-direction: column; */
+`;
 
 export default function ColorSearch() {
     const [error, setError] = useState(false);
@@ -21,8 +31,8 @@ export default function ColorSearch() {
 
     return (
         <Card>
-            <form action="/" method="/" noValidate autoComplete="off" id="colorSearch">
-                <React.Fragment>
+            <ColorSearchForm action="/" method="/" noValidate autoComplete="off" id="colorSearch">
+                <FormControls>
                     <label htmlFor="hexColorInput">Search for colors</label>
                     <Input id="hexColorInput"
                         onFocus={() => setError(false)}
@@ -33,14 +43,14 @@ export default function ColorSearch() {
                         placeholder="Example: FF00FF"
                     />
                     {error && <label htmlFor="hexColorInput">Please enter a valid hexadecimal code. Ex: FF00FF</label>}
-                </React.Fragment>
+                </FormControls>
                 <React.Fragment>
                     <Button onClick={setColorCodeToSearchHandler}
                         type="button">
                         Search
                     </Button>
                 </React.Fragment>
-            </form>
+            </ColorSearchForm>
         </Card>
     );
 };

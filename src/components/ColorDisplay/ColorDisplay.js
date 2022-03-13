@@ -4,6 +4,7 @@ import { ColorContext } from "../../contexts/color-context/color-context";
 import ColorMainInfo from "./ColorMainInfo";
 import ConversionTable from "../ConversionTable/ConversionTable";
 import styled from "styled-components";
+import ColorHarmonies from "../ColorHarmonies/ColorHarmonies";
 
 const ColorDisplayArea = styled.section``;
 
@@ -13,12 +14,15 @@ export default function ColorDisplay({ children }) {
 
     if (loading) return <div>Loading...</div>
 
+    if (error) return <div>{error}</div>
+
     return (
         <React.Fragment>
             {!loading && (
                 <ColorDisplayArea>
                     <ColorMainInfo colorInfo={colorInfo} />
                     <ConversionTable colorInfo={colorInfo} />
+                    <ColorHarmonies targetColor={colorCTX.targetColor} />
                 </ColorDisplayArea>
             )}
         </React.Fragment>

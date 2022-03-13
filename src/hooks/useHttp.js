@@ -1,15 +1,5 @@
 import { useState, useEffect } from "react";
 
-/*
-config object: {
-    url,
-    method,
-    headers,
-    body
-}
-*/
-
-//Precisa receber um objeto de configuração para a requisição http {url, method} e uma callback para tratar os dados???
 export const useHttp = (config) => {
     const [data, setData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
