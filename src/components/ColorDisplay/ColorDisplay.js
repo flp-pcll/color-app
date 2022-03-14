@@ -4,7 +4,7 @@ import { ColorContext } from "../../contexts/color-context/color-context";
 import ColorMainInfo from "./ColorMainInfo";
 import ConversionTable from "../ConversionTable/ConversionTable";
 import styled from "styled-components";
-import ColorHarmonies from "../ColorHarmonies/ColorHarmonies";
+import ColorSchemes from "../ColorSchemes/ColorSchemes";
 
 const ColorDisplayArea = styled.section``;
 
@@ -22,7 +22,7 @@ export default function ColorDisplay({ children }) {
                 <ColorDisplayArea>
                     <ColorMainInfo colorInfo={colorInfo} />
                     <ConversionTable colorInfo={colorInfo} />
-                    <ColorHarmonies />
+                    <ColorSchemes />
                 </ColorDisplayArea>
             )}
         </React.Fragment>

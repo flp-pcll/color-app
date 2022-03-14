@@ -1,6 +1,5 @@
 import React from "react";
 import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
-import ColorPalettes from "./components/ColorPalettes/ColorPalettes";
 import ColorSearch from "./components/ColorSearch/ColorSearch";
 import ControlsFlex from "./components/Layout/ControlsFlex";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";

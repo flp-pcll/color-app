@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ColorHarmonyItem = styled.li`
+const ColorSchemeItem = styled.li`
 `;
 
-export default ColorHarmonyItem;
+export default ColorSchemeItem;
