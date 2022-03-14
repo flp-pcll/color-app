@@ -6,7 +6,6 @@ import ColorScheme from "./ColorScheme";
 
 const ColorSchemesArea = styled.section``;
 
-
 export default function ColorSchemes() {
     const colorCTX = useContext(ColorContext);
     const harmonizer = new Harmonizer();
