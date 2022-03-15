@@ -1,16 +1,14 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState } from "react";
 import { getRandomColorCode } from "../../helpers/getRandomColorCode";
 import { ColorContext } from "./color-context";
 
 export default function ColorProvider({ children }) {
-    const [targetColor, setTargetColor] = useState('FF00FF');
-    // useLayoutEffect(() => setTargetColor(() => getRandomColorCode()), []);
+    const [targetColor, setTargetColor] = useState(() => getRandomColorCode());
 
     const updateTargetColor = hexCode => setTargetColor(hexCode);
 
     const colorContext = {
         targetColor,
-        colorInfoURL: `https://www.thecolorapi.com/id?hex=${targetColor}&format=json`,
         updateTargetColor
     };
 

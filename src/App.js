@@ -1,7 +1,6 @@
 import React from "react";
 import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
 import ColorSearch from "./components/ColorSearch/ColorSearch";
-import ControlsFlex from "./components/Layout/ControlsFlex";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
 import ColorProvider from "./contexts/color-context/colorProvider";
 
@@ -11,22 +10,20 @@ export default function App() {
     return (
         <React.Fragment>
             <GlobalStyle />
-            <header>
-            </header>
-            <main>
-                <ColorProvider>
+            <ColorProvider>
+                <header>
+                </header>
+                <main>
                     <section title="controls">
-                        <ControlsFlex>
-                            <RandomColorGenerator />
-                            <ColorSearch />
-                        </ControlsFlex>
+                        <RandomColorGenerator />
+                        <ColorSearch />
                     </section>
 
                     <ColorDisplay></ColorDisplay>
-                </ColorProvider>
-            </main>
+                </main>
+            </ColorProvider>
             <footer>
             </footer>
-        </React.Fragment>
+        </React.Fragment >
     );
 };

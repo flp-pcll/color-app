@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { ColorContext } from "../../contexts/color-context/color-context";
 import { getRandomColorCode } from "../../helpers/getRandomColorCode";
-
 import styled from "styled-components";
 import Button from "../UI/Button";
 import Card from "../UI/Card";

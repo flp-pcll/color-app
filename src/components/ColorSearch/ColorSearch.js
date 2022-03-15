@@ -7,11 +7,9 @@ import Input from "../UI/Input";
 import Card from "../UI/Card";
 
 const ColorSearchForm = styled.form`
-display: flex;
 `;
 
 const FormControls = styled.div`
-    display: flex;
     /* flex-direction: column; */
 `;
 
