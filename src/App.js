@@ -1,7 +1,6 @@
 import React from "react";
 import ColorDisplay from "./components/ColorDisplay/ColorDisplay";
-import ColorSearch from "./components/ColorSearch/ColorSearch";
-import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
+import ColorControls from "./components/ColorControls/ColorControls";
 import ColorProvider from "./contexts/color-context/colorProvider";
 
 import { GlobalStyle } from "./styles/GlobalStyle";
@@ -10,20 +9,20 @@ export default function App() {
     return (
         <React.Fragment>
             <GlobalStyle />
+            <header>
+                <div name="Logo Area"></div>
+                <div user-controls>
+                    <a>Login</a>
+                    <button>Sign Up</button>
+                </div>
+            </header>
             <ColorProvider>
-                <header>
-                </header>
                 <main>
-                    <section title="controls">
-                        <RandomColorGenerator />
-                        <ColorSearch />
-                    </section>
-
-                    <ColorDisplay></ColorDisplay>
+                    <ColorControls />
+                    <ColorDisplay />
                 </main>
             </ColorProvider>
-            <footer>
-            </footer>
+            <footer></footer>
         </React.Fragment >
     );
 };
